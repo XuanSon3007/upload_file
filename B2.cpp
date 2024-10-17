@@ -66,6 +66,10 @@ bool checkPrime(int n){
     }
     // 1.Tìm các cặp số blum có tổng cũng là 1 số blum nhỏ hơn N
 
+/*Do số blum= tích của 2 số nguyên tố dạng 4k+3 nên blum là số lẻ
+        => Tổng 2 số blum bất kì là 1 số chẵn
+        => Không thê tồn tại 1 cặp số blum có tổng cũng là 1 số blum(do mâu thuân) */
+
     vector<pair<int,int>> findBlum( vector<int> &blumNumbers, int N){
         vector<pair<int,int>> pairs;
         for(int i=0;i<blumNumbers.size();i++){
@@ -85,6 +89,7 @@ bool checkPrime(int n){
 
     }
         }
+        
      if(pairs.empty()){
         cout<<"Khong co cac cap so blum co tong cung la so blum nho hon "<<N<<endl;
      }   else {

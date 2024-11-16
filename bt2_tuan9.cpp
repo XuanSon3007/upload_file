@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -123,18 +124,29 @@ int main(){
     list.first = nullptr;
     list.last = nullptr;
 
-    addWord(&list, "xanh");
-    addWord(&list, "do");
-    addWord(&list, "tim");
-    addWord(&list, "vang");
-    addWord(&list, "cam");
-    addWord(&list, "do");
-    addWord(&list, "vang");
-    addWord(&list, "den");
-    addWord(&list, "trang");
-    addWord(&list, "xanh");
-    addWord(&list, "cam");
-    addWord(&list, "do");
+   
+
+    cout<<" Nhap cau: ";
+    string input;
+    getline(cin, input);//Đọc câu
+
+    string word = "";
+    for(char ch:input){
+        if(ch == ' '){
+            if(!word.empty()){
+                addWord(&list, word);//Thêm từ vào danh sách
+                word = "";//reset word để bắt đầu từ mới
+            }
+        } else{
+            word += ch;// Thêm ký tự vào từ hiện tại
+        }
+    }
+
+    //Thêm từ cuối cùng nếu có
+    if(!word.empty()){
+        addWord(&list, word);
+    }
+
 
     cout<<" Danh sach tu ban dau la: ";
     printList(&list);

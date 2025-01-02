@@ -14,7 +14,7 @@ int graph[MAX][MAX] = {
     {0, 0, 0, 0, 1, 0, 0}
 };
 
-// Tự cài đặt hàng đợi (queue)
+
 struct Queue {
     int items[MAX];
     int front, rear;
@@ -34,7 +34,7 @@ struct Queue {
     }
 };
 
-// Tự cài đặt ngăn xếp (stack)
+
 struct Stack {
     int items[MAX];
     int top;
